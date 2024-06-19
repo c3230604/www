@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>丸い矢印付きの見出し</title>
+    <title>吹き出しのような見出し</title>
     <style>
-    
-        h1.q1 {
-            padding-left: 20px;
-            background: url('path-to-your-arrow-image') no-repeat left center;
+        
+        h1.q2 {
+            height: 2.75rem;
+            line-height: 2.75rem;
+            background-color: #5bdb9e;
+            color: #fff;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            position: relative;
+            display: inline-block;
         }
+        h1.q2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #5bdb9e transparent transparent transparent;
+            transform: translateX(-50%);
+        }
+
+
         body {
             background-color: #fff;
             color: #666;
@@ -25,6 +43,6 @@
     </style>
 </head>
 <body>
-    <h1 class="q1">丸い矢印付きの見出し</h1>
+    <h1 class="q2">吹き出しのような見出し</h1>
 </body>
 </html>
